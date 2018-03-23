@@ -1,0 +1,250 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>redux-pack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <style type="text/css">.tk-effra{font-family:"effra",sans-serif;}</style> <style type="text/css">@font-face{font-family:effra;src:url(assets/fonts/effra-normal.woff2) format("woff2"),url(assets/fonts/effra-normal.woff) format("woff"),url(assets/fonts/effra-normal.opentype) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:effra;src:url(assets/fonts/effra-italic.woff2) format("woff2"),url(assets/fonts/effra-italic.woff) format("woff"),url(assets/fonts/effra-italic.opentype) format("opentype");font-weight:400;font-style:italic;}@font-face{font-family:effra;src:url(assets/fonts/effra-normal-1.woff2) format("woff2"),url(assets/fonts/effra-normal-1.woff) format("woff"),url(assets/fonts/effra-normal-1.opentype) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:effra;src:url(assets/fonts/effra-italic-1.woff2) format("woff2"),url(assets/fonts/effra-italic-1.woff) format("woff"),url(assets/fonts/effra-italic-1.opentype) format("opentype");font-weight:700;font-style:italic;}</style>
+<style type="text/css">
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(assets/fonts/roboto-normal.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(assets/fonts/roboto-normal-1.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(assets/fonts/roboto-normal-2.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(assets/fonts/roboto-normal-3.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(assets/fonts/roboto-normal-4.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(assets/fonts/roboto-normal-5.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(assets/fonts/roboto-normal-6.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(assets/fonts/roboto-normal-7.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(assets/fonts/roboto-normal-8.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(assets/fonts/roboto-normal-9.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(assets/fonts/roboto-normal-10.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(assets/fonts/roboto-normal-11.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(assets/fonts/roboto-normal-12.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(assets/fonts/roboto-normal-13.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+</style>
+</head>
+<body>
+  <app-root>
+    <div class="main-spinner text-muted">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <style media="screen">
+      @-webkit-keyframes dot-fx {
+        0%,
+        70%,
+        100% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        35% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @-moz-keyframes dot-fx {
+        0%,
+        70%,
+        100% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        35% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @-o-keyframes dot-fx {
+        0%,
+        70%,
+        100% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        35% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes dot-fx {
+        0%,
+        70%,
+        100% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        35% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .main-spinner {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+           -moz-transform: translate(-50%, -50%);
+             -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+
+        display: flex;
+        flex-flow: row nowrap;
+        padding: 0.3em;
+      }
+
+      .main-spinner>.dot {
+        width: 1.4em;
+        height: 1.4em;
+        border-width: 0.28em;
+        border-style: solid;
+        border-color: inherit;
+        border-radius: 50%;
+        transform: scale(0);
+        -webkit-animation: dot-fx 1800ms ease infinite 0ms;
+           -moz-animation: dot-fx 1800ms ease infinite 0ms;
+             -o-animation: dot-fx 1800ms ease infinite 0ms;
+                animation: dot-fx 1800ms ease infinite 0ms;
+      }
+
+      .main-spinner>.dot:nth-child(2) {
+        margin-left: 0.28em;
+        -webkit-animation: dot-fx 1800ms ease infinite 270ms;
+           -moz-animation: dot-fx 1800ms ease infinite 270ms;
+             -o-animation: dot-fx 1800ms ease infinite 270ms;
+                animation: dot-fx 1800ms ease infinite 270ms;
+      }
+
+      .main-spinner>.dot:nth-child(3) {
+        margin-left: 0.28em;
+        -webkit-animation: dot-fx 1800ms ease infinite 540ms;
+           -moz-animation: dot-fx 1800ms ease infinite 540ms;
+             -o-animation: dot-fx 1800ms ease infinite 540ms;
+                animation: dot-fx 1800ms ease infinite 540ms;
+      }
+    </style>
+  </app-root>
+
+  
+  <script>
+  window.__sb__ = {
+    presentation: {"components":[{"type":"cover","data":{"title":"redux-pack","subtitle":"sensible \n\npromise handling and middleware for redux\n\n","author":"Nick Bingham"},"options":{"textSize":0.2}},{"type":"background","data":{"image":null,"icon":null},"options":{}}],"options":{"textSize":0},"colorPalette":{"colorSets":[{"back":"#ffffff","text":"#222222","highlight":"#3b8cd1","chart1":"#f59b14","chart2":"#57c7ff","chart3":"#3ba862","chart4":"#0072b2","chart5":"#3bb995","chart6":"#d96760","chart7":"#148aad","chart8":"#8f6392","chart9":"#999999","chart10":"#b03f6f"}],"owner":{"__type":"Pointer","className":"_User","objectId":"quk5gi5Cxc"},"label":"Formal","createdAt":"2017-05-30T20:54:10.302Z","updatedAt":"2017-09-07T00:08:26.841Z","public":true,"hiddenFromEditor":false,"ACL":{"*":{"read":true},"role:Team":{"write":true},"quk5gi5Cxc":{"write":true}},"objectId":"iZSyIzZ5aH","__type":"Object","className":"Palette"},"owner":{"__type":"Pointer","className":"_User","objectId":"S70PG5SRGz"},"author":"Nick Bingham","layout":"aurora","slides":11,"subtitle":"sensible \n\npromise handling and middleware for redux\n\n","title":"redux-pack","views":0,"lang":"en","titlePlain":"redux-pack","name":"redux-pack","notes":"Keep your company tagline short and sweet, 5 to 7 words is ideal.&nbsp;","fontHeadings":"effra","layoutStyle":{"layoutId":"aurora","createdAt":"2016-08-04T18:15:01.701Z","updatedAt":"2017-10-18T17:15:06.832Z","label":"Aurora","public":true,"defaultFont":{"createdAt":"2016-08-04T18:26:26.669Z","updatedAt":"2017-05-26T18:26:05.842Z","label":"Roboto","fontId":"Roboto","webfont":{"google":{"families":["Roboto:300,700"]}},"public":true,"ACL":{"*":{"read":true},"role:Team":{"write":true}},"objectId":"U8QmFmKwBC","__type":"Object","className":"Font"},"defaultFormula":{"name":"Summer","owner":{"__type":"Pointer","className":"_User","objectId":"quk5gi5Cxc"},"sharedWithTeam":false,"layoutStyle":{"__type":"Pointer","className":"Layout","objectId":"ILBZtSIuYQ"},"colorPalette":{"__type":"Pointer","className":"Palette","objectId":"PADVFbPLT4"},"textFont":{"__type":"Pointer","className":"Font","objectId":"TcdVt7aOYY"},"headingFont":{"__type":"Pointer","className":"Font","objectId":"smcwpGFOPb"},"createdAt":"2017-06-06T21:07:20.977Z","updatedAt":"2017-10-18T17:14:58.571Z","public":true,"sampleSlideComponents":[{"type":"heading","data":{"heading":"STAY <b>POSITIVE</b>"},"options":{"xRatio":21.89,"yRatio":73.65,"textSize":4}},{"type":"image","data":{"image":null,"icon":{"source":"NounProject","id":"749797","thumbnailUrl":"https://d30y9cdsu7xlg0.cloudfront.net/png/749797-200.png"},"caption":""},"options":{"x":0,"y":0,"xRatio":-27.7,"yRatio":-8.39,"size":5}},{"type":"quote","data":{"quote":"Passion never fails.","author":"Paul Chen"},"options":{"x":0,"y":0,"xRatio":-4.15,"yRatio":53.43,"textSize":3}}],"ACL":{"*":{"read":true},"role:Team":{"write":true},"quk5gi5Cxc":{"write":true}},"objectId":"0fLVklttl7","__type":"Object","className":"Formula"},"sampleSlideComponents":[{"type":"heading","data":{"heading":"STAY <b>POSITIVE</b>"},"options":{"xRatio":21.89,"yRatio":73.65,"textSize":4}},{"type":"image","data":{"image":null,"icon":{"source":"NounProject","id":"749797","thumbnailUrl":"https://d30y9cdsu7xlg0.cloudfront.net/png/749797-200.png"},"caption":""},"options":{"x":0,"y":0,"xRatio":-27.7,"yRatio":-8.39,"size":5}},{"type":"quote","data":{"quote":"Passion never fails.","author":"Paul Chen"},"options":{"x":0,"y":0,"xRatio":-4.15,"yRatio":53.43,"textSize":3}}],"ACL":{"*":{"read":true}},"objectId":"ILBZtSIuYQ","__type":"Object","className":"Layout"},"headingFont":{"createdAt":"2016-08-04T18:19:42.526Z","updatedAt":"2016-08-04T18:20:13.998Z","label":"Effra","fontId":"effra","webfont":{"typekit":{"id":"ckn8mhe"}},"public":true,"ACL":{"*":{"read":true}},"objectId":"MCWU6KZ8dL","__type":"Object","className":"Font"},"templateUsageCount":831,"templateFavoriteCount":21,"formulaId":null,"privacy":"private","createdWithTemplate":"yWphNceuzE","createdAt":"2018-03-11T16:54:48.242Z","updatedAt":"2018-03-22T23:49:27.627Z","lastChange":{"__type":"Date","iso":"2018-03-11T19:35:51.506Z"},"summary":"","unlocked":true,"ACL":{"S70PG5SRGz":{"read":true,"write":true},"role:Readers_XnVrAO4ZZ0":{"read":true},"role:Writers_XnVrAO4ZZ0":{"read":true,"write":true}},"objectId":"XnVrAO4ZZ0","className":"Presentation","textFont":{"createdAt":"2016-08-04T18:26:26.669Z","updatedAt":"2017-05-26T18:26:05.842Z","label":"Roboto","fontId":"Roboto","webfont":{"google":{"families":["Roboto:300,700"]}},"public":true,"ACL":{"*":{"read":true},"role:Team":{"write":true}},"objectId":"U8QmFmKwBC","__type":"Object","className":"Font"}},
+    slides: [{"components":[{"type":"heading","data":{"heading":"What is redux-pack?","subheading":"A library that introduces promise-based middleware that allows async actions based on the lifecycle of a promise to be declarative.\n\n"},"options":{"textSize":0.8,"textAlign":"right"}},{"type":"background","data":{"image":null,"icon":{"id":"98230","source":"NounProject","thumbnailUrl":"https://d30y9cdsu7xlg0.cloudfront.net/png/98230-200.png","url":"assets/img/98230svg-704OIjd3"}},"options":{}}],"options":{"textSize":0},"presentation":{"__type":"Pointer","className":"Presentation","objectId":"XnVrAO4ZZ0"},"index":0,"notes":"<div>A question for the audience to grab their attention. Avoid rhetorical or obvious questions.&nbsp;</div><i>Example:&nbsp;</i><i style=\"font-size: 1em; line-height: 1.42857;\">How much time do you usually spend on ....?</i>","componentsPlain":"What is redux-pack?","createdAt":"2018-03-11T16:54:51.554Z","updatedAt":"2018-03-11T19:19:54.636Z","ACL":{"*":{"read":true},"role:Readers_XnVrAO4ZZ0":{"read":true},"role:Writers_XnVrAO4ZZ0":{"read":true,"write":true}},"objectId":"ue6tSioAHV","className":"Slide"},{"components":[{"type":"heading","data":{"heading":""},"options":{"textSize":1.4}},{"type":"background","data":{"image":{"id":"fMkcGKftoaXMA","source":"Giphy","thumbnailUrl":"https://media.giphy.com/media/fMkcGKftoaXMA/giphy-tumblr.gif","url":"assets/img/giphygif-15IvTpSp"},"icon":null},"options":{}},{"type":"paragraph","data":{"paragraph":"This library was written by<b>&nbsp;Leiland Richardson</b>&nbsp;and is currently used in production at <b>Airbnb.</b>"},"options":{"textSize":3,"xRatio":0.27,"yRatio":-22}}],"options":{"backgroundDim":0.36,"textSize":0},"presentation":{"__type":"Pointer","className":"Presentation","objectId":"XnVrAO4ZZ0"},"index":1,"componentsPlain":"This library was written byLeiland Richardsonand is currently used in production at Airbnb.","createdAt":"2018-03-11T16:54:50.457Z","updatedAt":"2018-03-11T19:19:41.123Z","ACL":{"*":{"read":true},"role:Readers_XnVrAO4ZZ0":{"read":true},"role:Writers_XnVrAO4ZZ0":{"read":true,"write":true}},"objectId":"qt2AEwHivB","className":"Slide"},{"components":[{"type":"heading","data":{"heading":"Redux-thunk handles asynchronous actions this way:"},"options":{}},{"type":"code","data":{"code":"// types.js\nexport const LOAD_FOO_STARTED = 'LOAD_FOO_STARTED';\nexport const LOAD_FOO_SUCCESS = 'LOAD_FOO_SUCCESS';\nexport const LOAD_FOO_FAILED = 'LOAD_FOO_FAILED';\n\n// actions.js\nexport function loadFoo(id) {\n  return dispatch => {\n    dispatch({ type: LOAD_FOO_STARTED, payload: id });\n    return Api.getFoo(id).then(foo => {\n      dispatch({ type: LOAD_FOO_SUCCESS, payload: foo });\n    }).catch(error => {\n      dispatch({ type: LOAD_FOO_FAILED, error: true, payload: error });\n    });\n  };\n}","language":"javascript"},"options":{"textSize":-1}},{"type":"code","data":{"code":"// reducer.js\nexport function fooReducer(state = initialState, action) {\n  const { type, payload } = action;\n  switch (type) {\n    case LOAD_FOO_STARTED:\n      return {\n        ...state,\n        isLoading: true,\n        fooError: null\n      };\n    case LOAD_FOO_SUCCESS:\n      return {\n        ...state,\n        isLoading: false,\n        foo: payload\n      };\n    case LOAD_FOO_FAILED:\n      return {\n        ...state,\n        isLoading: false,\n        fooError: payload\n      };\n    default:\n      return state;\n  }\n}","language":"javascript"},"options":{"textSize":-1}}],"options":{"figureSize":0,"textSize":0,"colorSet":0,"body-layout_2":"c"},"presentation":{"__type":"Pointer","className":"Presentation","objectId":"XnVrAO4ZZ0"},"index":2,"componentsPlain":"Redux-thunk handles asynchronous actions this way: // types.js export const LOAD_FOO_STARTED = 'LOAD_FOO_STARTED'; export const LOAD_FOO_SUCCESS = 'LOAD_FOO_SUCCESS'; export const LOAD_FOO_FAILED = 'LOAD_FOO_FAILED'; // actions.js export function loadFoo(id) { return dispatch = { dispatch({ type: LOAD_FOO_STARTED, payload: id }); return Api.getFoo(id).then(foo = { dispatch({ type: LOAD_FOO_SUCCESS, payload: foo }); }).catch(error = { dispatch({ type: LOAD_FOO_FAILED, error: true, payload: error }); }); }; } // reducer.js export function fooReducer(state = initialState, action) { const { type, payload } = action; switch (type) { case LOAD_FOO_STARTED: return { ...state, isLoading: true, fooError: null }; case LOAD_FOO_SUCCESS: return { ...state, isLoading: false, foo: payload }; case LOAD_FOO_FAILED: return { ...state, isLoading: false, fooError: payload }; default: return state; } }","notes":"<div>Brag with your absolute best metric:&nbsp;</div><i>$1MM Revenue run rate\", or \"50% Month over Month Growth\".&nbsp;</i>","createdAt":"2018-03-11T16:54:51.093Z","updatedAt":"2018-03-11T19:35:51.313Z","ACL":{"*":{"read":true},"role:Readers_XnVrAO4ZZ0":{"read":true},"role:Writers_XnVrAO4ZZ0":{"read":true,"write":true}},"objectId":"m3V8wDH3oD","className":"Slide"},{"components":[{"type":"heading","data":{"heading":"Redux-pack handles it this way:"},"options":{}},{"type":"code","data":{"code":"// types.js\nexport const LOAD_FOO = 'LOAD_FOO';\n\n// actions.js\nexport function loadFoo(id) {\n  return {\n    type: LOAD_FOO,\n    promise: Api.getFoo(id),\n  };\n}","language":"javascript"},"options":{"textSize":-1}},{"type":"code","data":{"code":"// reducer.js\nimport { handle } from 'redux-pack';\n\nexport function fooReducer(state = initialState, action) {\n  const { type, payload } = action;\n  switch (type) {\n    case LOAD_FOO:\n      return handle(state, action, {\n        start: prevState => ({\n          ...prevState,\n          isLoading: true,\n          fooError: null\n        }),\n        finish: prevState => ({ ...prevState, isLoading: false }),\n        failure: prevState => ({ ...prevState, fooError: payload }),\n        success: prevState => ({ ...prevState, foo: payload }),\n      });\n    default:\n      return state;\n  }\n}","language":"javascript"},"options":{"textSize":-1,"xRatio":0,"yRatio":0}}],"presentation":{"__type":"Pointer","className":"Presentation","objectId":"XnVrAO4ZZ0"},"index":3,"componentsPlain":"Redux-pack handles it this way: // types.js export const LOAD_FOO = 'LOAD_FOO'; // actions.js export function loadFoo(id) { return { type: LOAD_FOO, promise: Api.getFoo(id), }; } // reducer.js import { handle } from 'redux-pack'; export function fooReducer(state = initialState, action) { const { type, payload } = action; switch (type) { case LOAD_FOO: return handle(state, action, { start: prevState = ({ ...prevState, isLoading: true, fooError: null }), finish: prevState = ({ ...prevState, isLoading: false }), failure: prevState = ({ ...prevState, fooError: payload }), success: prevState = ({ ...prevState, foo: payload }), }); default: return state; } }","notes":"Keep bragging with your absolute best metric.&nbsp;<div>Hockey sticks get investor REALLY excited.&nbsp;</div>","createdAt":"2018-03-11T16:54:51.716Z","updatedAt":"2018-03-11T19:35:40.108Z","options":{"body-layout_2":"d"},"ACL":{"*":{"read":true},"role:Readers_XnVrAO4ZZ0":{"read":true},"role:Writers_XnVrAO4ZZ0":{"read":true,"write":true}},"objectId":"4vWxqdTOQC","className":"Slide"},{"components":[{"type":"heading","data":{"heading":"Benefits of redux-pack","subheading":""},"options":{}},{"type":"paragraph","data":{"paragraph":"<ul><li>\n\neliminates need to&nbsp;dispatch multiple \"actions\" as the result of the same interaction/event, where they probably should have just been a single action dispatch.&nbsp;</li><li>performance gains.&nbsp; When we have several dispatches as all part of a single transaction, each dispatch causes a separate rerender of the entire component tree, where we not only pay a huge performance penalty, but also risk the redux store being in an inconsistent state.\n\n</li></ul>"},"options":{"textAlign":"left","textSize":1}}],"options":{"textSize":0},"presentation":{"__type":"Pointer","className":"Presentation","objectId":"XnVrAO4ZZ0"},"index":4,"notes":"Talk about your market size.&nbsp;Be sure to use relevant data for your business and quote a credible source.","componentsPlain":"Benefits of redux-pack  * eliminates need to dispatch multiple \"actions\" as the result of the same interaction/event, where they probably should have just been a single action dispatch.\n * performance gains. When we have several dispatches as all part of a single transaction, each dispatch causes a separate rerender of the entire component tree, where we not only pay a huge performance penalty, but also risk the redux store being in an inconsistent state.","createdAt":"2018-03-11T16:54:50.805Z","updatedAt":"2018-03-11T19:19:30.328Z","ACL":{"*":{"read":true},"role:Readers_XnVrAO4ZZ0":{"read":true},"role:Writers_XnVrAO4ZZ0":{"read":true,"write":true}},"objectId":"ULa0idSMeS","className":"Slide"},{"components":[{"type":"background","data":{"image":{"id":"5415215092","name":"I'm So Confused!","owner":"Ian Sane","ownerId":"31246066@N04","source":"Flickr","thumbnailUrl":"https://farm6.staticflickr.com/5254/5415215092_acd78b7b18_n.jpg","url":"assets/img/5415215092_897c5f3b01_ojpg-p5dPkk9O"},"icon":null},"options":{}},{"type":"heading","data":{"heading":"What aren't you telling us, Nick?","subheading":"What's the catch?"},"options":{"textSize":1.2}}],"options":{"backgroundDim":0.14,"textSize":0},"presentation":{"__type":"Pointer","className":"Presentation","objectId":"XnVrAO4ZZ0"},"index":5,"componentsPlain":"I'm So Confused! What aren't you telling us, Nick?","notes":"Big image with someone suffering the problem that you solve.&nbsp;","createdAt":"2018-03-11T16:54:50.552Z","updatedAt":"2018-03-11T19:20:17.723Z","ACL":{"*":{"read":true},"role:Readers_XnVrAO4ZZ0":{"read":true},"role:Writers_XnVrAO4ZZ0":{"read":true,"write":true}},"objectId":"ZuF6vTPwBk","className":"Slide"},{"components":[{"type":"heading","data":{"heading":"Sometimes you might want an action to dispatch another action","subheading":""},"options":{"textSize":0.2}},{"type":"image","data":{"image":{"url":"assets/img/giphygifcida25782cb5aa56e227758483932dc7486-S09f8wIJ","thumbnailUrl":"https://media1.giphy.com/media/91fEJqgdsnu4E/giphy-downsized.gif?cid=a25782cb5aa56e227758483932dc7486","source":"Giphy","id":"91fEJqgdsnu4E"},"icon":null,"caption":"1:\n\nredux-pack can't do that\n\n"},"options":{"imageCrop":"square","size":0.6,"textSize":1.6}},{"type":"image","data":{"image":{"url":"assets/img/giphygifcida25782cb5aa56ef96539754255c0a890-nsyDbsk3","thumbnailUrl":"https://media0.giphy.com/media/KUOPgSNoKVcuQ/giphy-downsized.gif?cid=a25782cb5aa56ef96539754255c0a890","source":"Giphy","id":"KUOPgSNoKVcuQ"},"icon":null,"caption":"2:&nbsp;\n\nlibrary views actions dispatching actions as an anti-pattern\n\n"},"options":{"imageCrop":"square","size":0.6,"textSize":1.4}},{"type":"footer","data":{"footer":"<div><br></div>"},"options":{}}],"options":{"iconSize":0,"textSize":0,"figureSize":-0.2},"presentation":{"__type":"Pointer","className":"Presentation","objectId":"XnVrAO4ZZ0"},"index":6,"componentsPlain":"Sometimes you might want an action to dispatch another action 1: redux-pack can't do that 2: library views actions dispatching actions as an anti-pattern","notes":"Sum up the problem you solve in two short sentences. Replace the icons with the ones that apply.","createdAt":"2018-03-11T16:54:51.623Z","updatedAt":"2018-03-11T19:21:05.911Z","ACL":{"*":{"read":true},"role:Readers_XnVrAO4ZZ0":{"read":true},"role:Writers_XnVrAO4ZZ0":{"read":true,"write":true}},"objectId":"jBTO6llpmt","className":"Slide"},{"components":[{"type":"background","data":{"image":null,"icon":null},"options":{}},{"type":"heading","data":{"heading":"But that's OK","subheading":"We can work around it if we need to"},"options":{"textSize":2.2}}],"presentation":{"__type":"Pointer","className":"Presentation","objectId":"XnVrAO4ZZ0"},"index":7,"componentsPlain":"But that's OK","notes":"Your hero shot image (a user, or your interface).&nbsp;<div>Similar to Slide 3, but with a larger explanation about the product here.<br></div>","createdAt":"2018-03-11T16:54:50.901Z","updatedAt":"2018-03-11T19:21:13.869Z","ACL":{"*":{"read":true},"role:Readers_XnVrAO4ZZ0":{"read":true},"role:Writers_XnVrAO4ZZ0":{"read":true,"write":true}},"objectId":"bpKb7aTL4J","className":"Slide"},{"components":[{"type":"background","data":{"image":null,"icon":null},"options":{}},{"type":"heading","data":{"heading":"With Thunk, like so:\n\n","subheading":""},"options":{"textSize":0.2,"xRatio":0.11,"yRatio":-71.94}},{"type":"code","data":{"code":"\nimport system from '~/system';\nimport store from '~/public/store.js'; //thunk gives us access to the store\n\nexport const REGISTER = 'REGISTER';\nexport function register(payload){\n    return {\n        type: REGISTER,\n        promise: system.API.POST('/users',{\"payload\":payload}),\n        meta: {\n            onSuccess: (result, getState) => {\n                if (result.status===201){\n                    store.dispatch(login(payload));\n                }\n            },\n            onFailure: (err, getState) => {\n                console.warn(err);\n                store.dispatch(clearCredentials());\n            }\n        }\n    }\n}","language":"javascript"},"options":{"textSize":0}}],"presentation":{"__type":"Pointer","className":"Presentation","objectId":"XnVrAO4ZZ0"},"index":8,"componentsPlain":"With Thunk, like so: import system from '~/system'; import store from '~/public/store.js'; //thunk gives us access to the store export const REGISTER = 'REGISTER'; export function register(payload){ return { type: REGISTER, promise: system.API.POST('/users',{\"payload\":payload}), meta: { onSuccess: (result, getState) = { if (result.status===201){ store.dispatch(login(payload)); } }, onFailure: (err, getState) = { console.warn(err); store.dispatch(clearCredentials()); } } } }","notes":"Your hero shot image (a user, or your interface).&nbsp;<div>Similar to Slide 3, but with a larger explanation about the product here.<br></div>","createdAt":"2018-03-11T18:07:12.678Z","updatedAt":"2018-03-11T19:21:31.027Z","ACL":{"*":{"read":true},"role:Readers_XnVrAO4ZZ0":{"read":true},"role:Writers_XnVrAO4ZZ0":{"read":true,"write":true}},"objectId":"KhnZv3X4Tt","className":"Slide"},{"components":[{"type":"background","data":{"image":null,"icon":{"source":"NounProject","id":"33099","thumbnailUrl":"https://d30y9cdsu7xlg0.cloudfront.net/png/33099-200.png","url":"assets/img/33099svg-iPE238YI"}},"options":{"x":0,"y":0,"xRatio":0,"yRatio":0}},{"type":"image","data":{"image":{"url":"assets/img/giphygifcida25782cb5aa57a0c4662357051c09c02-K0VtgBmI","thumbnailUrl":"https://media2.giphy.com/media/dIxkmtCuuBQuM9Ux1E/giphy-downsized.gif?cid=a25782cb5aa57a0c4662357051c09c02","source":"Giphy","id":"dIxkmtCuuBQuM9Ux1E"},"icon":null},"options":{"imageCrop":"contain","size":3}}],"presentation":{"__type":"Pointer","className":"Presentation","objectId":"XnVrAO4ZZ0"},"index":9,"componentsPlain":"30-Second Demo of the Product","notes":"30-Second Demo of the Product (Add video content block)","createdAt":"2018-03-11T16:54:51.448Z","updatedAt":"2018-03-11T19:22:23.112Z","ACL":{"*":{"read":true},"role:Readers_XnVrAO4ZZ0":{"read":true},"role:Writers_XnVrAO4ZZ0":{"read":true,"write":true}},"objectId":"RuMyBbN3pi","className":"Slide"},{"components":[{"type":"background","data":{"image":null,"icon":null},"options":{}},{"type":"heading","data":{"heading":"And that's redux-pack in a nutshell","subheading":"Thanks for listening!"},"options":{"textSize":1.8}},{"type":"paragraph","data":{"paragraph":""},"options":{}}],"presentation":{"__type":"Pointer","className":"Presentation","objectId":"XnVrAO4ZZ0"},"index":10,"componentsPlain":"And that's redux-pack in a nutshell","notes":"Your hero shot image (a user, or your interface).&nbsp;<div>Similar to Slide 3, but with a larger explanation about the product here.<br></div>","createdAt":"2018-03-11T18:57:07.730Z","updatedAt":"2018-03-11T19:22:40.228Z","ACL":{"*":{"read":true},"role:Readers_XnVrAO4ZZ0":{"read":true},"role:Writers_XnVrAO4ZZ0":{"read":true,"write":true}},"objectId":"RDEXYyuXab","className":"Slide"}]
+  };
+  </script>
+  
+  <div id="embedded-icons"><div id="icon-33099" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><path style="" d="M95,32.458C95,25.025,88.979,19,81.55,19h-63.1  C11.021,19,5,25.025,5,32.458v36.084C5,75.975,11.021,82,18.45,82h63.1C88.979,82,95,75.975,95,68.542V32.458z M41,65.724V31.83  l25.702,16.947L41,65.724z" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div>
+<div id="icon-98230" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><g><g><path d="M48,78h-1V61.4c0-6.1,5.3-10.6,9.9-15c4.5-4.3,9.4-8.7,9.4-14.4c0-12.4-7.9-16.4-11.4-17.5c-7.7-2.5-16.5,0.3-21.3,6.9    l-0.8-0.6c5.1-6.9,14.3-9.9,22.5-7.2C62.9,16,67.5,22.9,67.5,32c0,6.2-5.3,10.7-9.9,15.2c-4.7,4.4-9.5,8.6-9.5,14.3V78z"></path></g><g><path d="M48.4,87.5c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S50,87.5,48.4,87.5z M48.4,82.5c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2    S49.5,82.5,48.4,82.5z"></path></g></g></svg></div></div>
+  <script type="text/javascript" src="assets/js/inline.bundle.js"></script>
+  <script type="text/javascript" src="assets/js/polyfills.bundle.js"></script>
+  <script type="text/javascript" src="assets/js/scripts.bundle.js"></script>
+  <script type="text/javascript" src="assets/js/styles.bundle.js"></script>
+  <script type="text/javascript" src="assets/js/vendor.bundle.js"></script>
+  <script type="text/javascript" src="assets/js/main.bundle.js"></script>
+</body>
+</html>
